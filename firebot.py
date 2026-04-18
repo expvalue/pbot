@@ -5,8 +5,9 @@ Drives the mecanum car forward continuously.
 When YOLO detects fire → stops the car immediately.
 When fire is no longer visible → resumes driving.
 
-Usage (PowerShell):
-    $env:ARDUINO_PORT = "COM10"
+Arduino sketch: pbot_mega.ino
+
+Usage:
     python firebot.py
 """
 
@@ -31,7 +32,7 @@ print("[firebot] Imports OK.", flush=True)
 #  CONFIG
 # ══════════════════════════════════════════════════════════════════════════════
 
-ARDUINO_PORT = os.environ.get("ARDUINO_PORT", "").strip()
+ARDUINO_PORT = os.environ.get("ARDUINO_PORT", "COM10").strip()
 ARDUINO_BAUD = 9600
 
 FIRE_WEIGHTS_URL  = "https://github.com/luminous0219/fire-and-smoke-detection-yolov8/raw/main/weights/best.pt"

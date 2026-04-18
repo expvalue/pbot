@@ -1,8 +1,8 @@
 /*
- * firebot_drive.ino — Production firmware for fire-detection bot
+ * pbot_mega.ino — Production firmware for fire-detection bot
  * Arduino Mega  •  9600 baud  •  Osoyoo Mecanum
  *
- * Accepts serial commands from the Python fire-detection script:
+ * Accepts serial commands from firebot.py:
  *   'F' → drive forward (all 4 wheels)
  *   'S' → stop all motors
  */
@@ -25,10 +25,10 @@
 
 #define DRIVE_SPEED 150
 
-void FL_fwd(int s) { digitalWrite(FL_DIR1, LOW);  digitalWrite(FL_DIR2, HIGH); analogWrite(FL_PWM, s); }
-void FR_fwd(int s) { digitalWrite(FR_DIR1, LOW);  digitalWrite(FR_DIR2, HIGH); analogWrite(FR_PWM, s); }
-void RL_fwd(int s) { digitalWrite(RL_DIR1, LOW);  digitalWrite(RL_DIR2, HIGH); analogWrite(RL_PWM, s); }
-void RR_fwd(int s) { digitalWrite(RR_DIR1, LOW);  digitalWrite(RR_DIR2, HIGH); analogWrite(RR_PWM, s); }
+void FL_fwd(int s) { digitalWrite(FL_DIR1, HIGH); digitalWrite(FL_DIR2, LOW);  analogWrite(FL_PWM, s); }
+void FR_fwd(int s) { digitalWrite(FR_DIR1, HIGH); digitalWrite(FR_DIR2, LOW);  analogWrite(FR_PWM, s); }
+void RL_fwd(int s) { digitalWrite(RL_DIR1, HIGH); digitalWrite(RL_DIR2, LOW);  analogWrite(RL_PWM, s); }
+void RR_fwd(int s) { digitalWrite(RR_DIR1, HIGH); digitalWrite(RR_DIR2, LOW);  analogWrite(RR_PWM, s); }
 
 void drive_forward(int s) {
   FL_fwd(s); FR_fwd(s); RL_fwd(s); RR_fwd(s);
@@ -49,7 +49,7 @@ void setup() {
   for (int i = 0; i < 12; i++) pinMode(pins[i], OUTPUT);
   stop_all();
   Serial.begin(9600);
-  Serial.println(F("Firebot ready. Waiting for commands..."));
+  Serial.println(F("pbot ready. Waiting for commands..."));
 }
 
 void loop() {
