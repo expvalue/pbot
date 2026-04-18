@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Fire Bot",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/fire_drive.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

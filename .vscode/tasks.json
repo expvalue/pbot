@@ -1,0 +1,79 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Fire Bot",
+      "type": "process",
+      "command": "C:\\Users\\saigu\\miniconda3\\python.exe",
+      "args": [
+        "${workspaceFolder}/fire_drive.py"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Compile Arduino Mega Sketch",
+      "type": "process",
+      "command": "arduino-cli",
+      "args": [
+        "compile",
+        "--fqbn",
+        "arduino:avr:mega",
+        "--libraries",
+        "C:\\Users\\saigu\\AppData\\Local\\Arduino15\\libraries",
+        "--build-path",
+        "${workspaceFolder}/.arduino-build",
+        "${workspaceFolder}/firebot"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Upload Arduino Mega Sketch",
+      "type": "process",
+      "command": "arduino-cli",
+      "args": [
+        "upload",
+        "-p",
+        "COM10",
+        "--fqbn",
+        "arduino:avr:mega",
+        "--input-dir",
+        "${workspaceFolder}/.arduino-build",
+        "${workspaceFolder}/firebot"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Compile And Upload Arduino Mega Sketch",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Compile Arduino Mega Sketch",
+        "Upload Arduino Mega Sketch"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

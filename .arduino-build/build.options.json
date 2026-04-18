@@ -1,0 +1,9 @@
+{
+  "additionalFiles": "",
+  "compiler.optimization_flags": "",
+  "customBuildProperties": "",
+  "fqbn": "arduino:avr:mega",
+  "hardwareFolders": "C:\\Users\\saigu\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.7,C:\\Users\\saigu\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.7",
+  "otherLibrariesFolders": "C:\\Users\\saigu\\AppData\\Local\\Arduino15\\libraries,C:\\Users\\saigu\\OneDrive\\Documents\\Arduino\\libraries",
+  "sketchLocation": "C:\\Users\\saigu\\Downloads\\pbot\\firebot"
+}
