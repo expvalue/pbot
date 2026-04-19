@@ -1,1 +1,1 @@
-# pbot
+Ember is an autonomous fire-suppression robot designed for proactive building safety. It follows pre-programmed patrol paths to monitor high-risk zones. Using an Intel RealSense camera and sophisticated machine learning, it scans for visual signatures of fire. Once a threat is confirmed, Ember interrupts its patrol, maneuvers to the optimal distance, and deploys its onboard fire extinguisher via a high-torque servo mechanism to neutralize the threat immediately.
